@@ -1,0 +1,15 @@
+[submodule "repositories/CodeFormer"]
+	path = repositories/CodeFormer
+	url = https://github.com/jinmingyi1998/CodeFormer.git
+[submodule "repositories/stable-diffusion-stability-ai"]
+	path = repositories/stable-diffusion-stability-ai
+	url = https://github.com/Stability-AI/stablediffusion.git
+[submodule "repositories/taming-transformers"]
+	path = repositories/taming-transformers
+	url = https://github.com/CompVis/taming-transformers.git
+[submodule "repositories/k-diffusion"]
+	path = repositories/k-diffusion
+	url = https://github.com/crowsonkb/k-diffusion.git
+[submodule "repositories/BLIP"]
+	path = repositories/BLIP
+	url = https://github.com/salesforce/BLIP.git
