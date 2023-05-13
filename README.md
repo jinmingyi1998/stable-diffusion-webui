@@ -1,3 +1,28 @@
+# Stable Diffusion web UI Docker
+## build
+docker related file: docker/
+requirement third party repository : from git submodule
+get submodule with command:
+```shell
+git submodule update --init
+```
+## run
+You may change the path for arg `-v host_path:docker_path`, to mount your files in the container.
+```shell
+docker run -d --name sdw \
+-p 7860:7860 \
+-v $PWD/models:/app/models \
+-v $PWD/extensions:/app/extensions \
+-v $PWD/localizations:/app/localizati \
+-v $PWD/outputs:/app/outputs \
+-v $HOME/.cache/huggingface/hub:/root/.cache/huggingface/hub \
+jinmingyi1998/stable-diffusion-webui:5.0.3
+```
+
+
+below is original README.md
+--------
+
 # Stable Diffusion web UI
 A browser interface based on Gradio library for Stable Diffusion.
 
