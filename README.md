@@ -15,10 +15,28 @@ docker run -d --name sdw \
 -v $PWD/extensions:/app/extensions \
 -v $PWD/localizations:/app/localizati \
 -v $PWD/outputs:/app/outputs \
+-v $PWD/embeddings:/app/embeddings \
 -v $HOME/.cache/huggingface/hub:/root/.cache/huggingface/hub \
-jinmingyi1998/stable-diffusion-webui:5.0.3
+jinmingyi1998/stable-diffusion-webui:latest
 ```
-
+or use docker compose
+```yaml
+version: "3.9"
+services:
+  web:
+    image: "jinmingyi1998/stable-diffusion-webui:latest"
+    ports:
+      - "7860:7860"
+    volumes:
+      - "/stable-diffusion-webui-docker/extensions:/app/extensions"
+      - "/stable-diffusion-webui-docker/models:/app/models"
+      - "/stable-diffusion-webui-docker/outputs:/app/outputs"
+      - "/stable-diffusion-webui-docker/localizations:/app/localizations"
+      - "$HOME/.cache/huggingface/hub:/root/.cache/huggingface/hub"
+    command:
+      - "--listen"
+      - "--xformers"
+```
 
 below is original README.md
 --------
